@@ -18,13 +18,13 @@ st.set_page_config(
 # Create Session object
 def create_session_object():
     connection_parameters = {
-      "account"   : "",
-      "user"      : "",
-      "password"  : "",
-      "role"      : "",
-      "warehouse" : "",
-      "database"  : "",
-      "schema"    : ""
+      "account"   : st.secrets["account"],
+      "user"      : st.secrets["user"],
+      "password"  : st.secrets["password"],
+      "role"      : st.secrets["role"],
+      "warehouse" : st.secrets["warehouse"],
+      "database"  : st.secrets["database"],
+      "schema"    : st.secrets["schema"],
     }
     session = Session.builder.configs(connection_parameters).create()
     return session
